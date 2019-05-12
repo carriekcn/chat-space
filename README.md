@@ -4,8 +4,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, primary_key: true|
-|name|string|null: false|
-|email|string|null: false|
+|name|string|index: true, null: false, unique: true|
+|email|string|null: false, unique: true|
 |password|string|null: false|
 |created_at|datetime|null: false|
 
@@ -20,7 +20,7 @@
 Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, primary_key: true|
-|group_name|string|null: false|
+|group_name|string|index: true, unique: true, null: false|
 
 ### Association
 - has_many :users, through: user_groups
