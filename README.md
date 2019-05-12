@@ -4,7 +4,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, primary_key: true|
-|name|string|index: true, null: false, unique: true|
+|name|string|index: true, null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |created_at|datetime|null: false|
@@ -20,7 +20,7 @@
 Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, primary_key: true|
-|group_name|string|index: true, unique: true, null: false|
+|name|string|index: true, unique: true, null: false|
 
 ### Association
 - has_many :users, through: user_groups
@@ -37,7 +37,8 @@ Column|Type|Options|
 |created_at|datetime|null: false|
 
 ### Association
-- belongs_to :user_group
+- belongs_to :user
+- belongs_to :group
 
 
 ## user_groups
@@ -52,7 +53,6 @@ Column|Type|Options|
 ### Association
 - belongs_to :user
 - belongs_to :group
-- belongs_to :message
 
 
 
