@@ -11,7 +11,7 @@
 
 ### Association
 - has_many :groups, through: user_groups
-- has_many :messages, through: user_groups
+- has_many :messages
 - has_many :user_groups 
 
 
@@ -24,7 +24,7 @@ Column|Type|Options|
 
 ### Association
 - has_many :users, through: user_groups
-- has_many :messages, through: user_groups
+- has_many :messages
 - has_many :user_groups
 
 
