@@ -1,0 +1,53 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %title test
+    %link{:href => "style.scss", :rel => "stylesheet"}/
+    %link{:href => "https://use.fontawesome.com/releases/v5.6.3/css/all.css", :rel => "stylesheet"}/
+    
+
+%body
+  %header グループを作成しました 
+  .wrapper
+    .chat-side
+      .side-header
+        %p.side-header__user-name seo 
+        %ul.user-menu
+          %li.user-menu__edit-user 
+            %i.fa.fa-edit
+          %li.user-menu__new-group
+            %i.fas.fa-cog
+      .groups
+        .group
+          %p.group__group-name sample group
+          %p.group__latest-message message
+          %p.group__group-name Test group
+          %p.group__latest-message comment
+    .chat-main
+      .main-header
+        .current-group
+          %h2.current-group__name sample message
+          %ul.member-list
+            Member:
+            %li.member-list__member test user
+        .main-header__edit-btn Edit
+      .messages
+        .message
+          .upper-info
+            %p.upper-info__user Test user
+            %p.upper-info__date 2019/05/25(sat) 15:00:00
+          %p.message__text testing.
+        .message
+          .upper-info
+            %p.upper-info__user Sample user
+            %p.upper-info__date 2019/05/25(sat) 16:00:00
+          %p.message__text testing.
+      .form
+        %form.new-message
+          .input-box
+            %input.input-box__text{:placeholder => "type a message", :type => "text"}/
+            %label.image-label{:for => "message_image"}
+              %i.fa.fa-image
+          %input.new-message__submit-btn{:name => "commit", :type => "submit", :value => "Send"}/
