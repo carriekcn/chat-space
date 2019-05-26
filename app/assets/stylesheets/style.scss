@@ -3,7 +3,6 @@ html, body {
   margin: 0;
   padding: 0;
 }
-
 ul{
   height: 100%;
   margin: 0;
@@ -15,8 +14,6 @@ header{
   color: $wh-color;
   font-size: 16px;
 }
-
-
 .chat-side {
   width: 300px;
   color: $wh-color;
@@ -33,27 +30,25 @@ header{
     color: $wh-color;
     font-size: 16px;
 
-    .side-header__user-name {
+    &__user-name {
       padding-top: 35px;
       padding-left: 20px;
      }
-
     .user-menu {
        display: flex;
        list-style: none;
 
-      .user-menu__edit-user {
+      &__edit-user {
          padding-top: 50px;
+         padding-right: 10px;
          }
 
-      .user-menu__new-group {
+      &__new-group {
          padding-top: 50px;
          padding-right: 20px;
-
          }
       }
   }
-
   .groups {
      height: calc(100vh - 100px);
      background-color: #2f3e51;
@@ -63,20 +58,19 @@ header{
     .group {
       margin-bottom: 40px;
 
-      .group__group-name {
+      &__group-name {
          color: $wh-color;
          font-size: 15px;
          margin-bottom: 5px;
          padding-top: 40px;
        }
-      .group__latest-message {
+      &__latest-message {
          font-size: 11px;
          color: $wh-color;
        }
     }
   }
 }
-
 .chat-main {
   width: calc(100vw - 300px);
   float: left;
@@ -93,16 +87,11 @@ header{
       color: #333333;
       margin-top: 35px;
 
-     .current-group__name {
-      }
      .member-list {
         display: flex;
         margin-top: 15px;
         font-size: 12px;
         color: $sub_tx-color;
-
-       .member-list__member {
-       }
      }
    }
    .main-header__edit-btn {
@@ -114,7 +103,6 @@ header{
       color: $bl-color;
     }
  }
-
 .messages {
   height: calc(100vh - 282px);
   padding: 46px 40px;
@@ -128,12 +116,12 @@ header{
        display: flex;
        margin-bottom: 10px;
 
-      .upper-info__user {
+      &__user {
         color: $main_tx_color;
         font-size: 16px;
         font-weight: bold;
        }
-      .upper-info__date {
+      &__date {
         color: $sub_tx-color;
         font-size: 12px;
         margin-left: 10px;
@@ -146,7 +134,6 @@ header{
     }
   }
 }
-
 .form {
    height: 70px;
    padding: 20px 40px;
@@ -159,7 +146,7 @@ header{
        position: relative;
        width: 100%;
 
-      .input-box__text {
+      &__text {
          height: 50px;
          width: 100%;
          padding: 0 10px 0 10px;
@@ -172,9 +159,9 @@ header{
          top: 10px;
          right: 10px;
          cursor: pointer;
-       }
-      .image-labe__input {
-        display: none;
+         &__input {
+           display: none;
+         }
        }
      }
     .new-message__submit-btn {
