@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   def new
-    @grouop = Group.new
+    @group = Group.new
     @group.users << current_user
   end
 
