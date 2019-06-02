@@ -15,14 +15,13 @@ header{
   font-size: 16px;
 }
 
-.chat-side a {
-  color: $wh-color;
-}
-
 .chat-side {
   width: 300px;
   color: $wh-color;
   float: left;
+  a {
+    color: $wh-color;
+  }
 
   .side-header {
     background-color: #253141;
@@ -51,18 +50,18 @@ header{
       &__new-group {
          padding-top: 50px;
          padding-right: 20px;
-
          }
       }
   }
-  .groups a {
-    text-decoration: none;
-  }
+
   .groups {
      height: calc(100vh - 100px);
      background-color: #2f3e51;
      padding: 20px 20px 0;
      overflow: scroll;
+     a {
+      text-decoration: none;
+     }
 
     .group {
       margin-bottom: 40px;
