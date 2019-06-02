@@ -1,20 +1,8 @@
 %body
-  %header グループを作成しました 
+  //%header グループを作成しました 
   .wrapper
     .chat-side
-      .side-header
-        %p.side-header__user-name seo 
-        %ul.user-menu
-          %li.user-menu__edit-user 
-            %i.fa.fa-edit
-          %li.user-menu__new-group
-            %i.fa.fa-cog
-      .groups
-        .group
-          %p.group__group-name sample group
-          %p.group__latest-message message
-          %p.group__group-name Test group
-          %p.group__latest-message comment
+      = render :partial => "shared/side_bar"
     .chat-main
       .main-header
         .current-group
