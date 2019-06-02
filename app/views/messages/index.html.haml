@@ -1,7 +1,8 @@
 %body
   //%header グループを作成しました 
   .wrapper
-    = render partial: "shared/side_bar", locals: { group: @group }
+    .chat-side
+      = render :partial => "shared/side_bar"
     .chat-main
       .main-header
         .current-group

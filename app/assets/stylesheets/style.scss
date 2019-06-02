@@ -14,6 +14,11 @@ header{
   color: $wh-color;
   font-size: 16px;
 }
+
+.chat-side a {
+  color: $wh-color;
+}
+
 .chat-side {
   width: 300px;
   color: $wh-color;
@@ -35,8 +40,8 @@ header{
       padding-left: 20px;
      }
     .user-menu {
-       display: flex;
-       list-style: none;
+      display: flex;
+      list-style: none;
 
       &__edit-user {
          padding-top: 50px;
@@ -46,8 +51,12 @@ header{
       &__new-group {
          padding-top: 50px;
          padding-right: 20px;
+
          }
       }
+  }
+  .groups a {
+    text-decoration: none;
   }
   .groups {
      height: calc(100vh - 100px);
