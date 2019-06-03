@@ -19,14 +19,40 @@
           %p.message__text testing.
         .message
           .upper-info
-            %p.upper-info__user Sample user
-            %p.upper-info__date 2019/05/25(sat) 16:00:00
-          %p.message__text testing.
+
       .form
-        %form.new-message
-          .input-box
-            %input.input-box__text{placeholder: "type a message", type: "text"}
-            %label.image-label{for: "message_image"}
-              %i.fa.fa-image
-              %input.image-label__input#message_image{name: "message[image]", type: "file"}
-          %input.new-message__submit-btn{name: "commit", type: "submit", value: "Send"}/
+        .new-message
+          = form_for [@group, @message] do |f|
+            .input-box
+              .input-box__text
+                = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+            .image-label
+              = f.label :image, class: 'image-label__input' do
+                = fa_icon 'picture-o', class: 'icon'
+                = f.file_field :image, class: 'hidden'
+            = f.submit 'Send', class: 'new-message__submit-btn'
+
+      -# .form
+      -#   .new-message
+      -#   = form_for [@group, @message] do |f|
+      -#     .input-box
+      -#       = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+      -#       .image-label
+      -#         = f.label :image, class: 'image-label__input' do
+      -#           = fa_icon 'picture-o', class: 'icon'
+      -#           = f.file_field :image, class: 'hidden'
+      -#       = f.submit 'Send', class: 'new-message__submit-btn'
+
+
+
+      -# .form
+      -#   %form#new_message.new-message{"accept-charset" => "UTF-8", :action => "/groups/1365/messages", :enctype => "multipart/form-data", :method => "post"}
+      -#     %input{:kl_vkbd_parsed => "true", :name => "utf8", :type => "hidden", :value => "✓"}/
+      -#     %input{:kl_vkbd_parsed => "true", :name => "authenticity_token", :type => "hidden", :value => "0+l4XqgEPeDWVAxAThn5Bv6QggD50S0vY6a3u21e0WNo+GCO1FwtLzDdIHZTh//qkrWwJWk2y2vfoC/pCRe08A=="}/
+      -#     .input-box
+      -#       %input#message_content.input-box__text{:kl_vkbd_parsed => "true", :name => "message[content]", :placeholder => "type a message", :type => "text"}/
+      -#       %label.image-label{:for => "message_image"}
+      -#         %i.fa.fa-image
+      -#         %input#message_image.image-label__input{:kl_vkbd_parsed => "true", :name => "message[image]", :type => "file"}/
+      -#     %input.new-message__submit-btn{"data-disable-with" => "Send", :kl_vkbd_parsed => "true", :name => "commit", :type => "submit", :value => "Send"}/
+
