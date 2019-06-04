@@ -11,14 +11,9 @@
             Member:
             %li.member-list__member test user
         .main-header__edit-btn Edit
+
       .messages
-        .message
-          .upper-info
-            %p.upper-info__user Test user
-            %p.upper-info__date 2019/05/25(sat) 15:00:00
-          %p.message__text testing.
-        .message
-          .upper-info
+        = render @messages
 
       .form
         .new-message
