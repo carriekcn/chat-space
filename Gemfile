@@ -61,3 +61,6 @@ group :development, :test do
   gem 'devise'
 end
 # add :production later.
+
+gem 'carrierwave'
+gem 'mini_magick'

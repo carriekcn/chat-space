@@ -19,14 +19,15 @@
           %p.message__text testing.
         .message
           .upper-info
-            %p.upper-info__user Sample user
-            %p.upper-info__date 2019/05/25(sat) 16:00:00
-          %p.message__text testing.
+
       .form
-        %form.new-message
-          .input-box
-            %input.input-box__text{placeholder: "type a message", type: "text"}
-            %label.image-label{for: "message_image"}
-              %i.fa.fa-image
-              %input.image-label__input#message_image{name: "message[image]", type: "file"}
-          %input.new-message__submit-btn{name: "commit", type: "submit", value: "Send"}/
+        .new-message
+          = form_for [@group, @message] do |f|
+            .input-box
+              .input-box__text
+                = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+            .image-label
+              = f.label :image, class: 'image-label__input' do
+                = fa_icon 'picture-o', class: 'icon'
+                = f.file_field :image, class: 'hidden'
+            = f.submit 'Send', class: 'new-message__submit-btn'
