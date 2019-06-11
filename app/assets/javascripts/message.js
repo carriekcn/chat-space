@@ -20,14 +20,19 @@ $(document).on('turbolinks:load', function(){
                 </div>`
   return html;
   }
+
+  function scroll(){
+    $('.messages').animate({scrollTop: $('.message')[0].scrollHeight});
+  }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    var message = new FormData(this);
-    var url = (window.location.href);
+    var formData = new FormData(this);
+    var url = $(this).attr('action')
     $.ajax({  
       url: url,
       type: 'POST',
-      data: message,
+      data: formData,
       dataType: 'json',
       processData: false,
       contentType: false
@@ -36,9 +41,12 @@ $(document).on('turbolinks:load', function(){
       var html = buildHTML(data);
       $('.messages').append(html);
       $('#message_content').val('');
+      $('.new-message__submit-btn').prop('disabled', false);
+      scroll()
     })
     .fail(function(data){
       alert('エラーが発生したためメッセージは送信できませんでした。');
+      $('.new-message__submit-btn').prop('disabled', false);   
     })
   })
-});
+})
