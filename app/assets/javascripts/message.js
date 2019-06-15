@@ -32,6 +32,8 @@ $(function(){
       console.log("done");
       console.log(message);
       var html = buildMessage(message);
+      $('.messages').append(html);
+      $('#message_content').val('');
       console.log(html);
       // debugger
       //console.log(message);
