@@ -15,11 +15,9 @@ $(function(){
   }
 
   $('#new_message').on('submit', function(e){
-    console.log("bbbbbb");
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    //console.log(this);
     $.ajax({
       url: url,
       type: "POST",
@@ -29,18 +27,15 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      console.log("done");
-      console.log(message);
       var html = buildMessage(message);
       $('.messages').append(html);
       $('#message_content').val('');
-      console.log(html);
-      // debugger
-      //console.log(message);
+      $('.form__submit').prop('disabled', false);
       scroll()
     })
     .fail(function(){
-      console.log("fail");
+      alert('error');
+      $('.form__submit').prop('disabled', false);
     });
   })
 });
