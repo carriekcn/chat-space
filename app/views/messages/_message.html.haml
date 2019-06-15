@@ -1,13 +1,24 @@
+-# .message
+-#   .upper-info
+-#     %p.upper-info__user
+-#       = message.user.name
+-#     %p.upper-info__date
+-#       = message.created_at.strftime("%Y/%m/%d %H:%M")
+-#     - if message.content.present? 
+-#       %p.message__text
+-#         = message.content
+-#       = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
 .message
   .upper-info
     %p.upper-info__user
       = message.user.name
     %p.upper-info__date
       = message.created_at.strftime("%Y/%m/%d %H:%M")
-    - if message.content.present? 
-      %p.message__text
-        = message.content
-      = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+  - if message.content.present? 
+    %p.message__text
+      = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 
 -# ご参考までに。
 -# 10行目で後置ifを使用しているので、7-9行目でも使用して以下のように書いてもいいですね。
