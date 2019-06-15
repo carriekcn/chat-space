@@ -10,6 +10,9 @@ $(function(){
                 </div>`   
     return html;
   }
+  function scroll() {
+    $('.messages').animate({scrollTop: $('.message')[0].scrollHeight});
+  }
 
   $('#new_message').on('submit', function(e){
     console.log("bbbbbb");
@@ -32,6 +35,7 @@ $(function(){
       console.log(html);
       // debugger
       //console.log(message);
+      scroll()
     })
     .fail(function(){
       console.log("fail");
