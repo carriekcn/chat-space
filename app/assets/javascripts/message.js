@@ -29,13 +29,14 @@ $(function(){
     .done(function(message){
       var html = buildMessage(message);
       $('.messages').append(html);
-      $('#message_content').val('');
-      $('.form__submit').prop('disabled', false);
+      $('#new_message')[0].reset();      
+      $('.new-message__submit-btn').prop('disabled', false);
       scroll()
     })
+
     .fail(function(){
       alert('error');
-      $('.form__submit').prop('disabled', false);
+      $('.new-message__submit-btn').prop('disabled', false);
     });
   })
 });
