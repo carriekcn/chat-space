@@ -1,14 +1,3 @@
--# .message
--#   .upper-info
--#     %p.upper-info__user
--#       = message.user.name
--#     %p.upper-info__date
--#       = message.created_at.strftime("%Y/%m/%d %H:%M")
--#     - if message.content.present? 
--#       %p.message__text
--#         = message.content
--#       = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-
 .message
   .upper-info
     %p.upper-info__user
@@ -19,31 +8,3 @@
     %p.message__text
       = message.content
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-
--# ご参考までに。
--# 10行目で後置ifを使用しているので、7-9行目でも使用して以下のように書いてもいいですね。
--# %p.message__text= message.content if message.content.present?
-
-
-      -# .messages
-      -#   .message
-      -#     .upper-info
-      -#       %p.upper-info__user Test user
-      -#       %p.upper-info__date 2019/05/25(sat) 15:00:00
-      -#     %p.message__text testing.
-      -#   .message
-      -#     .upper-info
-
-
--# .message
--#   .message
--#     .upper-info
--#       = message.user.name
--#     .upper-message__date
--#       = message.created_at.strftime("%Y/%m/%d %H:%M")
--#   .lower-message
--#     - if message.content.present?
--#       %p.lower-message__content
--#         = message.content
--#     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
--# ※上記のコードのクラス名は一例です。ご自身のクラス名と違っていて構いません
