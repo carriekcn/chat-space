@@ -40,26 +40,15 @@ $(function(){
     });
   })
 
-  //自動更新
-  // $(function(){
-  //   setInterval(update, 5000);
-  // })
-
   var reloadMessages = function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
-      //今いるページのリンクが/groups/グループID/messagesのパスとマッチすれば以下を実行。
-      //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
       var last_message_id = $('.message:last').data("message-id");
-    
-      //var presentHTML = window.location.href
-      //var presentHTML = '/groups/api/messages';
+
       $.ajax ({
         url: "api/messages",
         type: 'get',
         dataType: 'json',
         data: {last_id: last_message_id}
-        // processData: false,
-        // contentType: false
       })
       .done(function(messages){
         var insertHTML = '';
