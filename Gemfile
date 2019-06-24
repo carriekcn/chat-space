@@ -63,9 +63,7 @@ gem 'erb2haml'
 
 gem 'font-awesome-rails'
 
-group :development, :test do
-  gem 'devise'
-end
+gem 'devise'
 # add :production later.
 
 gem 'carrierwave'
