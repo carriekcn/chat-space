@@ -12,14 +12,17 @@ set :rbenv_ruby, '2.5.1'
 set :ssh_options, auth_methods: ['publickey'],
                   keys: ['~/.ssh/kci_tech_01.pem']
 
-set :unicorn_pid, -> { "#{shared_path}/tm/pids/unicorn.pid"}
-set :unicorn_config_path, -> { "#{current_path}/config/uniron.rb"}
-set :keep_release, 5
+set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
+set :keep_releases, 5
+
+set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
+set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
+set :keep_releases, 5
 
 after 'deploy:publishing', 'deploy:restart'
-namespace :deploy deploy
+namespace :deploy do
   task :restart do
-    invoke 'unicorn: restart'
+    invoke 'unicorn:restart'
   end
 end
 
