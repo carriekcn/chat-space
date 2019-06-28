@@ -8,6 +8,7 @@ $(function(){
                   </div>
                   <p class="message__text">${message.content}</p>
                   </div>
+                  ${image}
                 </div>`   
     return html;
   }
